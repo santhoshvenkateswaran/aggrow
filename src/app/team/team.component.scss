@@ -1,0 +1,47 @@
+@import '../../assets/theme.scss';
+
+.container {
+    // font-size: 18px;
+    min-height: calc(100vh - 56px);
+    height: 100%;
+}
+
+.jumbotron {
+    h1 {
+        color: $the_green;
+        font-size: 4rem;
+    }
+    p {
+        font-size: 1rem;
+        color: $the_green;
+    }
+    text-align: center;
+    border-radius: 0;
+}
+
+.cards-team {
+    img {
+        height: 150px;
+        width: 150px;
+    }
+}
+
+.touch {
+    .btn-dark {
+        // visibility: hidden;
+        border-radius: 50%;
+        opacity: 0;
+        transition: all .5s ease-in-out;
+
+    }
+    &:hover {
+        .btn-dark {
+            // visibility: visible;
+            opacity: 1;
+            transition: all .5s ease-in-out;
+        }
+    }
+    img {
+        cursor: pointer;
+    }
+}

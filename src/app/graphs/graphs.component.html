@@ -1,0 +1,89 @@
+<div class="container py-5">
+  <div class="d-flex justify-content-center align-items-center mb-4">
+    <h3><i class="fa fa-line-chart mr-2" aria-hidden="true"></i>Insights</h3>
+  </div>
+  <div class="d-flex justify-content-center align-items-center mb-4">
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item mx-2">
+        <a class="nav-link rounded-pill" [ngClass]="{'active btn-success': curChart=='crop-list'}"
+          (click)="setData('crop-list')">List of Crops</a>
+      </li>
+      <li class="nav-item mx-2">
+        <a class="nav-link rounded-pill" [ngClass]="{'active btn-success': curChart=='crop-distribution'}"
+          (click)="setData('crop-distribution')">Crop Distribution</a>
+      </li>
+      <li class="nav-item mx-2">
+        <a class="nav-link rounded-pill" [ngClass]="{'active  btn-success': curChart=='algorithm-analysis'}"
+          (click)="setData('algorithm-analysis')">Algorithms Analysis</a>
+      </li>
+      <li class="nav-item mx-2">
+        <a class="nav-link rounded-pill" [ngClass]="{'active  btn-success': curChart=='algorithm-ensemble'}"
+          (click)="setData('algorithm-ensemble')">Ensemble Weight Comparison</a>
+      </li>
+    </ul>
+  </div>
+  <ng-container *ngIf="!isSet">
+    <div class="row col-12 mx-0 px-4 d-flex justify-content-center spinner">
+      <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+      <span class="sr-only">Loading...</span>
+    </div>
+  </ng-container>
+  <div class="chart" *ngIf="isSet && curChart=='crop-list'">
+    <div class="row col-12 m-0 d-flex justify-content-between">
+      <ng-container *ngFor="let crop of cropInfo">
+        <div class="card shadow-sm col-12 col-sm-5 col-md-3 col-lg-2 p-0 mx-1 my-3">
+          <img src="{{crop.img}}" class="card-img-top" alt="crop-img">
+          <div class="card-body">
+            <p class="card-text text-center">{{crop.name}}</p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="chart shadow-sm table-responsive" *ngIf="isSet && curChart=='crop-distribution'">
+    <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
+      style="min-width: 800px; width: 100%; height: 500px; display: block;">
+    </highcharts-chart>
+  </div>
+  <div class="chart shadow-sm table-responsive" *ngIf="isSet && curChart=='algorithm-analysis'">
+    <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
+      style="min-width: 800px; width: 100%; height: 500px; display: block;">
+    </highcharts-chart>
+  </div>
+  <div class="chart chart-table table-responsive" *ngIf="isSet && curChart=='algorithm-ensemble'">
+    <!--  -->
+    <table class="table table-bordered table-dark m-0">
+      <thead>
+        <tr class="text-dark">
+          <th class="table-dark" scope="col">SVM</th>
+          <th class="table-dark" scope="col">Decision Tree</th>
+          <th class="table-dark" scope="col">Logistic Regression</th>
+          <th class="table-dark" scope="col">Naive Bayes</th>
+          <th class="table-dark" scope="col">Gradient Boosting</th>
+          <th class="table-dark" scope="col">Accuracy</th>
+        </tr>
+      </thead>
+      <tbody class="text-dark">
+        <ng-container *ngFor="let item of tableInfo">
+          <tr>
+            <td [ngClass]="{'table-success': item[0], 'table-danger': !item[0]}">{{item[0]}}</td>
+            <td [ngClass]="{'table-success': item[1], 'table-danger': !item[1]}">{{item[1]}}</td>
+            <td [ngClass]="{'table-success': item[2], 'table-danger': !item[2]}">{{item[2]}}</td>
+            <td [ngClass]="{'table-success': item[3], 'table-danger': !item[3]}">{{item[3]}}</td>
+            <td [ngClass]="{'table-success': item[4], 'table-danger': !item[4]}">{{item[4]}}</td>
+            <th [ngClass]="{
+              'table-primary': item[5] >= 0.94,
+              'table-info': (item[5] < 0.94 && item[5] >= 0.845),
+              'table-warning': item[5] < 0.845}">
+              {{item[5]}}</th>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+  <div class="mt-3" *ngIf="isSet && curChart=='algorithm-ensemble'">
+    <h6>This table shows the <span class="text-success">algorithms implemented</span> in each iteration of the analysis
+      and the corresponding accuracies. The highest accuracy is of the proposed model –– an ensemble of Support
+      Vector Machine, Decision Tree & Gradient Boosting with equal weights.</h6>
+  </div>
+</div>

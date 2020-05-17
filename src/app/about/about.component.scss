@@ -1,0 +1,20 @@
+@import '../../assets/theme.scss';
+
+.container {
+    font-size: 18px;
+    min-height: calc(100vh - 56px);
+    height: 100%;
+}
+
+.jumbotron {
+    h1 {
+        color: $the_green;
+        font-size: 4rem;
+    }
+    p {
+        font-size: 1rem;
+        color: $the_green;
+    }
+    text-align: center;
+    border-radius: 0;
+}

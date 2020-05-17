@@ -1,0 +1,12 @@
+$the_green: #1fa67a;
+
+.navbar-brand {
+    color: $the_green;
+    &:hover {
+        color: #1b926c;
+    }
+}
+
+.nav-item, .nav-link {
+    cursor: pointer;
+}

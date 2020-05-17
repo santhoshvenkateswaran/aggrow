@@ -1,0 +1,21 @@
+@import '../../assets/theme.scss';
+
+.container {
+    // min-height: calc(100vh - 56px);
+    // height: 100%;
+    li {
+        cursor: pointer;
+    }
+
+    .chart-table {
+        max-height: 514px;
+    }
+
+    .spinner {
+        margin-top: 300px;
+    }
+}
+
+td, th {
+    width: 17%;
+}

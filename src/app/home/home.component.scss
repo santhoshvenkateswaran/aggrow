@@ -1,0 +1,25 @@
+@import '../../assets/theme.scss';
+
+.container {
+    // min-height: 600px;
+    min-height: calc(100vh - 56px);
+    height: 100%;
+}
+.card {
+    img {
+        max-height: 500px;
+    }
+}
+
+.jumbotron {
+    h1 {
+        color: $the_green;
+        font-size: 4rem;
+    }
+    h6 {
+        font-size: 1rem;
+        // color: $another_green;
+    }
+    text-align: center;
+    border-radius: 0;
+}
