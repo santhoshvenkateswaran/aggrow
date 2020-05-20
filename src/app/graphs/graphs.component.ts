@@ -43,11 +43,11 @@ export class GraphsComponent implements OnInit {
   constructor() {
     this.highCharts = Highcharts;
     this.chartOptions = {};
-    this.algorithms = ['Logistic Regression', 'Naive Bayes', 'Random Forest',
-      'Decision Tree', 'SVM', 'Gradient Boosting', 'Our Proposed Algortihm'];
-    this.cropCount = [146, 411, 433, 325, 307, 392, 203, 269, 504, 216, 543, 368, 402, 425, 486, 380, 477, 496, 350, 168, 438, 313, 385, 357, 508];
+    this.algorithms = ['Logistic Regression', 'Naive Bayes', 'Decision Tree', 'SVM', 'Gradient Boosting', 'Our Proposed Algortihm'];
+    this.cropCount = [146, 411, 433, 325, 307, 392, 203, 269, 504, 216, 543, 368, 402, 425, 486, 380,
+      477, 496, 350, 168, 438, 313, 385, 357, 508];
     // this.accuracies = [0.781, 0.788, 0.819, 0.873, 0.914, 0.936, 0.945];
-    this.accuracies = [68.19, 73.83, 78.90, 87.35, 90.10, 92.62, 95.49];
+    this.accuracies = [68.19, 73.83, 87.35, 90.10, 92.62, 95.49];
     this.cropInfo = [
       { name: "Arecanut", img: "assets/IMG/Arecanut.jpg" },
       { name: "Bajra", img: "assets/IMG/Bajra.jpg" },
