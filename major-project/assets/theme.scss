@@ -1,0 +1,10 @@
+$the_green: #1fa67a;
+$another_green: #1b926c;
+
+
+.btn-success {
+    background-color: #1fa67a !important;
+    &:hover {
+        background-color: #1b926c !important;
+    }
+}
