@@ -22,8 +22,7 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(formData): void {
-    console.log(formData);
-    document.location = 'mailto:santhoshs1998@gmail.com?subject=AGGROW%20-%20regarding&body='
+    document.location.href = 'mailto:santhoshs1998@gmail.com?subject=AGGROW%20-%20regarding&body='
       + formData.message + '%0A%0A%0AName:' + formData.name + '%0A%0AEmail:' + formData.email + '%0AMobile:' + formData.phone;
   }
 
