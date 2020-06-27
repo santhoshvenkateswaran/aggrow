@@ -1,6 +1,7 @@
+import { CropService } from './home/home.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +14,8 @@ import { GraphsComponent } from './graphs/graphs.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { TeamComponent } from './team/team.component';
+import { HttpClientInMemoryWebApiModule, InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -29,10 +32,12 @@ import { TeamComponent } from './team/team.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
     FormsModule,
-    HighchartsChartModule
+    ReactiveFormsModule,
+    HighchartsChartModule,
   ],
-  providers: [],
+  providers: [CropService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

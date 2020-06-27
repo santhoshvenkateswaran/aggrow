@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Application: A Recommendation System For Crop Prediction
-@author: RA1611020010002 & RA1611020010088
+@author: Santhosh [santhoshs1998@gmail.com]
 """
 
 # Imports section
@@ -69,7 +69,7 @@ def api_train():
 
 
 # API predict
-@app.route('/api/predict-crop', methods=['POST'])
+@app.route('/api/predict', methods=['POST'])
 def api_predict():
     s = json.loads(request.get_data())
     user_ip[0][0] = s['rainfall']
