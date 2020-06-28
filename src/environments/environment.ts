@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseURL: 'http://127.0.0.1:4200/api/',
+  baseURL: 'https://santhoshvenkateswaran.github.io/aggrow/api/',
 };
 
 /*
