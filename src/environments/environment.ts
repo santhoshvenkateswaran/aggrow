@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseURL: 'https://santhoshvenkateswaran.github.io/aggrow/api/',
+  baseURL: 'api/',
+  useMockServer: true,
 };
 
 /*
