@@ -1,7 +1,6 @@
 import { CropService } from './home.service';
 import { IMAGES } from './home.model';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -33,7 +32,7 @@ export class HomeComponent implements OnInit {
   //   'Chillies', 'Castor', 'Cashewnut', 'Banana', 'Bajra', 'Arecanut',
   // ];
 
-  constructor(private http: HttpClient, private cropService: CropService) {
+  constructor(private cropService: CropService) {
     this.images = IMAGES;
     this.rainfall = null;
     this.temperature = null;
@@ -83,7 +82,7 @@ export class HomeComponent implements OnInit {
     if (this.rainfall === null) {
       this.errorMsg.rainfall = 'Please enter input for Rainfall to predict.';
     } else if (this.rainfall < 200 || this.rainfall > 2000) {
-      this.errorMsg.rainfall = 'Input for Rainfall is out of range. Enter a valid input.';
+      this.errorMsg.rainfall = 'Input for Rainfall is out of range. Enter a value between 200 and 2000.';
     } else {
       this.errorMsg.rainfall = '';
     }
@@ -92,7 +91,7 @@ export class HomeComponent implements OnInit {
     if (this.temperature === null) {
       this.errorMsg.temperature = 'Please enter input for Temperature to predict.';
     } else if (this.temperature < 10 || this.temperature > 40 || this.temperature === null) {
-      this.errorMsg.temperature = 'Input for Temperature is out of range. Enter a valid input.';
+      this.errorMsg.temperature = 'Input for Temperature is out of range. Enter a value between 10 and 40.';
     } else {
       this.errorMsg.temperature = '';
     }
@@ -100,8 +99,8 @@ export class HomeComponent implements OnInit {
     // Validating pH
     if (this.ph === null) {
       this.errorMsg.ph = 'Please enter input for pH to predict.';
-    } else if (this.ph < 5 || this.ph > 7.5 || this.ph === null) {
-      this.errorMsg.ph = 'Input for pH is out of range. Enter a valid input.';
+    } else if (this.ph < 5 || this.ph > 8 || this.ph === null) {
+      this.errorMsg.ph = 'Input for pH is out of range. Enter a value between 5 and 8.';
     } else {
       this.errorMsg.ph = '';
     }

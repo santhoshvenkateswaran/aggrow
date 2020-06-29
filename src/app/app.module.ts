@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { CropService } from './home/home.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -32,7 +33,7 @@ import { InMemoryDataService } from './in-memory-data.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    environment.production ? [] : InMemoryWebApiModule.forRoot(InMemoryDataService),
     FormsModule,
     ReactiveFormsModule,
     HighchartsChartModule,

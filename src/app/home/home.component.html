@@ -29,7 +29,7 @@
                 <label for="rainfall">Rainfall</label>
                 <div class="input-group mb-2 mr-sm-2">
                     <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="ml-1 fa fa-tint" aria-hidden="true"></i></div>
+                        <div class="input-group-text"><i class="fa fa-tint" aria-hidden="true"></i></div>
                     </div>
                     <input type="number" class="form-control" id="rainfall" (focus)="onFocus('rainfall')"
                         placeholder="Enter rainfall" [ngClass]="{'is-invalid':errorMsg.rainfall}"
@@ -43,7 +43,7 @@
                 <label for="temperature">Temperature</label>
                 <div class="input-group mb-2 mr-sm-2">
                     <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="ml-1 fa fa-thermometer-three-quarters"
+                        <div class="input-group-text"><i class="fa fa-thermometer-three-quarters"
                                 aria-hidden="true"></i></div>
                     </div>
                     <input type="number" class="form-control" id="temperature" (focus)="onFocus('temperature')"
@@ -58,7 +58,7 @@
                 <label for="ph">Soil pH</label>
                 <div class="input-group mb-2 mr-sm-2">
                     <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="ml-1 fa fa-adjust" aria-hidden="true"></i></div>
+                        <div class="input-group-text"><i class="fa fa-adjust" aria-hidden="true"></i></div>
                     </div>
                     <input type="number" class="border-alert form-control" id="ph" (focus)="onFocus('ph')"
                         placeholder="Enter soil pH" [ngClass]="{'is-invalid':errorMsg.ph}" [(ngModel)]="ph">

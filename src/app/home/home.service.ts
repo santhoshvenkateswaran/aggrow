@@ -21,9 +21,9 @@ export class CropService {
     }
 
 
-    post(endPoint: string, input): Observable<JSON> {
+    post(endPoint: string, payload): Observable<JSON> {
         return this.http
-        .get(this.baseURL + endPoint)
+        .post(this.baseURL + endPoint, payload)
         .pipe(map(responseData => {
             return JSON.parse(JSON.stringify(responseData));
         }));
