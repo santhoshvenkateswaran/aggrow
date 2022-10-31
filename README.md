@@ -8,7 +8,7 @@ This application has been deployed [here](https://project-aggrow.herokuapp.com/)
 
 ## Frontend
 
-This contains the frontend part of the application. This has been created using Angular 9.
+This contains the frontend part of the application. This has been created using Angular 14.
 
 ## Backend
 
