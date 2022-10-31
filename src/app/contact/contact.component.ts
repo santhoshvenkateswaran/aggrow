@@ -4,13 +4,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
-
   contactForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.contactForm = this.formBuilder.group({
@@ -22,8 +21,14 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(formData): void {
-    document.location.href = 'mailto:hello@imsanthosh.xyz?subject=AGGROW%20-%20regarding&body='
-      + formData.message + '%0A%0A%0AName:' + formData.name + '%0A%0AEmail:' + formData.email + '%0AMobile:' + formData.phone;
+    document.location.href =
+      'mailto:hello@santhosh.page?subject=AGGROW%20-%20regarding&body=' +
+      formData.message +
+      '%0A%0A%0AName:' +
+      formData.name +
+      '%0A%0AEmail:' +
+      formData.email +
+      '%0AMobile:' +
+      formData.phone;
   }
-
 }
